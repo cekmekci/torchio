@@ -8,13 +8,13 @@ class FourierTransform:
         try:
             import torch.fft
 
-            transformed = torch.fft.fftn(tensor)
+            transformed = torch.fft.fftn(tensor, norm="ortho")
             fshift = torch.fft.fftshift(transformed)
             return fshift
         except (ModuleNotFoundError, AttributeError):
             import torch
 
-            transformed = np.fft.fftn(tensor)
+            transformed = np.fft.fftn(tensor, norm="ortho")
             fshift = np.fft.fftshift(transformed)
             return torch.from_numpy(fshift)
 
@@ -24,11 +24,11 @@ class FourierTransform:
             import torch.fft
 
             f_ishift = torch.fft.ifftshift(tensor)
-            img_back = torch.fft.ifftn(f_ishift)
+            img_back = torch.fft.ifftn(f_ishift, norm="ortho")
             return img_back
         except (ModuleNotFoundError, AttributeError):
             import torch
 
             f_ishift = np.fft.ifftshift(tensor)
-            img_back = np.fft.ifftn(f_ishift)
+            img_back = np.fft.ifftn(f_ishift, norm="ortho")
             return torch.from_numpy(img_back)

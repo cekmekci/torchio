@@ -22,6 +22,7 @@ from .augmentation.intensity import RandomSwap, Swap
 from .augmentation.intensity import RandomBlur, Blur
 from .augmentation.intensity import RandomNoise, Noise
 from .augmentation.intensity import RandomSpike, Spike
+from .augmentation.intensity import RandomSpikev2, Spikev2
 from .augmentation.intensity import RandomGamma, Gamma
 from .augmentation.intensity import RandomMotion, Motion
 from .augmentation.intensity import RandomGhosting, Ghosting
@@ -75,6 +76,8 @@ __all__ = [
     'Noise',
     'RandomSpike',
     'Spike',
+    'RandomSpikev2',
+    'Spikev2',
     'RandomGamma',
     'Gamma',
     'RandomMotion',

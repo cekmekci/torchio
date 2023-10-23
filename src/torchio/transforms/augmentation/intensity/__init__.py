@@ -17,6 +17,9 @@ from .random_spike import Spike
 from .random_swap import RandomSwap
 from .random_swap import Swap
 
+from .random_spike_v2 import RandomSpikev2
+from .random_spike_v2 import Spikev2
+
 
 __all__ = [
     'RandomSwap',
@@ -27,6 +30,8 @@ __all__ = [
     'Noise',
     'RandomSpike',
     'Spike',
+    'RandomSpikev2',
+    'Spikev2',
     'RandomGamma',
     'Gamma',
     'RandomMotion',
